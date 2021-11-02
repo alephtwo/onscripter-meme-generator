@@ -1,0 +1,9 @@
+# npm
+/node_modules
+
+# Copyrighted materials
+/static/images/tsukihime
+
+# Misc.
+/_build
+/reports

@@ -1,0 +1,27 @@
+div.scene-container {
+  position: relative;
+  height: 480px;
+  margin-bottom: 0.5em;
+}
+
+div.scene-container > canvas {
+  position: absolute;
+}
+
+div.controls {
+  width: 640px;
+}
+
+div.controls > * {
+  margin-bottom: 0.5em;
+}
+
+div.controls textarea {
+  width: 633px;
+  height: 100px;
+}
+
+div.controls select {
+  width: 100%;
+  height: 32px;
+}
