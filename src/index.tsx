@@ -17,7 +17,10 @@ const cache = new SceneCache({
   font: fonts.SazanamiGothic,
 });
 
-cache.initialize().then(() => {
-  const mount = document.getElementById('app');
-  ReactDOM.render(<Application cache={cache} />, mount);
-});
+cache
+  .initialize()
+  .then(() => {
+    const mount = document.getElementById('app');
+    ReactDOM.render(<Application cache={cache} />, mount);
+  })
+  .catch(console.error);

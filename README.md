@@ -6,6 +6,6 @@ Right now, you will need to supply your own assets.
 For tsukihime, you will want to place the assets at:
 
 | Type  | Location                      |
-|-------|-------------------------------|
+| ----- | ----------------------------- |
 | bg    | static/images/tsukihime/bg    |
 | tachi | static/images/tsukihime/tachi |

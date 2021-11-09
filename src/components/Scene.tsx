@@ -69,13 +69,13 @@ export class Scene extends React.Component<SceneProps> {
     context.shadowColor = 'rgba(0, 0, 0, 0)';
   }
 
-  #drawImage(context: CanvasRenderingContext2D, image: CachedImage, center: boolean = false) {
+  #drawImage(context: CanvasRenderingContext2D, image: CachedImage, center = false) {
     const img = image.getImage();
 
     // Depending on the size of the canvas, we might need to scale the image.
     // Get the scale factor for that (which allows us to respect the aspect ratio).
     const scale = Math.min(context.canvas.width / img.width, context.canvas.height / img.height);
-    const [width, height] = [img.width, img.height].map(x => x * scale);
+    const [width, height] = [img.width, img.height].map((x) => x * scale);
 
     // If we're centering, we need to figure out how far to shift the image.
     const offsetX = center ? this.#getCenteringOffset(width, context.canvas.width) : 0;
@@ -83,7 +83,7 @@ export class Scene extends React.Component<SceneProps> {
     context.drawImage(img, 0, 0, img.width, img.height, offsetX, 0, width, height);
   }
 
-  #getCenteringOffset (imageWidth: number, canvasWidth: number): number {
+  #getCenteringOffset(imageWidth: number, canvasWidth: number): number {
     return (canvasWidth - imageWidth) / 2;
   }
 }
