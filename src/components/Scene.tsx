@@ -6,6 +6,14 @@ import { SceneCache } from '../cache/SceneCache';
 interface SceneProps {
   cache: SceneCache;
 }
+
+const TEXT_PROPERTIES = {
+  left: 10,
+  top: 34,
+  fontSize: 17.75,
+  lineHeight: 22,
+};
+
 export class Scene extends React.Component<SceneProps> {
   canvas: React.RefObject<HTMLCanvasElement>;
   cache: SceneCache;
@@ -46,10 +54,8 @@ export class Scene extends React.Component<SceneProps> {
   }
 
   #renderText(context: CanvasRenderingContext2D, font: FontFace, text: string) {
-    const fontSize = 16;
-
     // Set the font and shadow
-    context.font = `${fontSize}pt ${font.family}`;
+    context.font = `${TEXT_PROPERTIES.fontSize}px ${font.family}`;
     context.fillStyle = 'white';
     context.shadowOffsetX = 1;
     context.shadowOffsetY = 1;
@@ -57,10 +63,9 @@ export class Scene extends React.Component<SceneProps> {
 
     // Break up the text we're given by lines.
     text.split('\n').forEach((line, i) => {
-      const x = 20;
       // Space the lines out a little bit vertically.
-      const y = 30 + (fontSize + 4) * i;
-      context.fillText(line, x, y);
+      const y = TEXT_PROPERTIES.top + TEXT_PROPERTIES.lineHeight * i;
+      context.fillText(line, TEXT_PROPERTIES.left, y);
     });
 
     // Reset shadow

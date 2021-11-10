@@ -3,7 +3,6 @@ import * as _ from 'lodash';
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
 import { SceneCache } from './cache/SceneCache';
-import * as Tsukihime from './sets/tsukihime.json';
 import { Application } from './components/Application';
 
 const fonts = {
@@ -11,9 +10,9 @@ const fonts = {
 };
 
 const cache = new SceneCache({
-  background: _.sample(Tsukihime.backgrounds) || '/images/tsukihime/bg/bg_06f.jpg',
-  sprite: _.sample(Tsukihime.sprites) || '/images/tsukihime/tachi/stk_t10.png',
-  text: 'today I will do bad things on purpose',
+  background: '/images/tsukihime/bg/bg_34c.jpg',
+  sprite: '/images/tsukihime/tachi/aki_t07b.png',
+  text: 'Lorem ipsum dolor sit amet',
   font: fonts.SazanamiGothic,
 });
 
