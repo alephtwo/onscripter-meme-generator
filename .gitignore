@@ -4,6 +4,9 @@
 # Copyrighted materials
 /static/images/tsukihime
 
+# Build
+/public
+
 # Misc.
 /_build
 /reports
