@@ -1,5 +1,4 @@
 import './index.css';
-import * as _ from 'lodash';
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
 import { SceneCache } from './cache/SceneCache';
