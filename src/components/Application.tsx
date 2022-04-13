@@ -38,13 +38,17 @@ export function Application(props: ApplicationProps): JSX.Element {
         <div>
           <textarea
             defaultValue={props.cache.getText()}
-            onInput={(e) => callbacks.updateText((e.target as HTMLTextAreaElement).value)}
+            onInput={(e) => {
+              void callbacks.updateText((e.target as HTMLTextAreaElement).value);
+            }}
           ></textarea>
         </div>
         <div>
           <select
             defaultValue={props.cache.getBackground().getUrl()}
-            onChange={(e) => callbacks.updateBackground(e.target.value)}
+            onChange={(e) => {
+              void callbacks.updateBackground(e.target.value);
+            }}
           >
             {backgrounds}
           </select>
@@ -52,7 +56,9 @@ export function Application(props: ApplicationProps): JSX.Element {
         <div>
           <select
             defaultValue={props.cache.getSprite().getUrl()}
-            onChange={(e) => callbacks.updateSprite(e.target.value)}
+            onChange={(e) => {
+              void callbacks.updateSprite(e.target.value);
+            }}
           >
             {sprites}
           </select>

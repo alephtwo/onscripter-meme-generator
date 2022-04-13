@@ -1,6 +1,6 @@
 import './index.css';
 import * as React from 'react';
-import * as ReactDOM from 'react-dom';
+import { createRoot } from 'react-dom/client';
 import { SceneCache } from './cache/SceneCache';
 import { Application } from './components/Application';
 
@@ -15,10 +15,11 @@ const cache = new SceneCache({
   font: fonts.SazanamiGothic,
 });
 
+const root = createRoot(document.getElementById('app') as HTMLDivElement);
+
 cache
   .initialize()
   .then(() => {
-    const mount = document.getElementById('app');
-    ReactDOM.render(<Application cache={cache} />, mount);
+    root.render(<Application cache={cache} />);
   })
   .catch(console.error);
