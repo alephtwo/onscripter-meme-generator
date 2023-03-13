@@ -1,5 +1,5 @@
 import * as path from 'path';
-import { glob } from 'glob';
+import { globSync } from 'glob';
 import { describe } from 'mocha';
 import { expect } from 'chai';
 import * as Tsukihime from '../../src/sets/tsukihime.json';
@@ -12,8 +12,7 @@ const paths = {
 
 function getBrowserPaths(dir: string): Array<string> {
   return (
-    glob
-      .sync(path.join(dir, '*'))
+    globSync(path.join(dir, '*'))
       // convert to the browser path
       .map((f) => f.replace(root, ''))
   );
