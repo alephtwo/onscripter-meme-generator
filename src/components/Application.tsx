@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { RefObject, useRef } from 'react';
 import { SceneCache } from '../cache/SceneCache';
-import * as Tsukihime from '../sets/tsukihime.json';
+import Tsukihime from '../sets/tsukihime.json';
 import { Scene } from './Scene';
 
 interface ApplicationProps {

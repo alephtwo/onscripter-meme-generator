@@ -1,7 +1,6 @@
 import * as path from 'path';
 import { globSync } from 'glob';
-import { describe } from 'mocha';
-import { expect } from 'chai';
+import { describe, it, expect } from '@jest/globals';
 import * as Tsukihime from '../../src/sets/tsukihime.json';
 
 const root = path.join(__dirname, '..', '..', 'static');
@@ -21,12 +20,11 @@ function getBrowserPaths(dir: string): Array<string> {
 describe('tsukihime', () => {
   it('all backgrounds should be tracked', () => {
     const backgrounds = getBrowserPaths(paths.backgrounds);
-
-    expect(Tsukihime.backgrounds).to.contain.members(backgrounds);
+    expect(Tsukihime.backgrounds).toContain(backgrounds);
   });
 
   it('all sprites should be tracked', () => {
     const sprites = getBrowserPaths(paths.sprites);
-    expect(Tsukihime.sprites).to.contain.members(sprites);
+    expect(Tsukihime.sprites).toContain(sprites);
   });
 });
