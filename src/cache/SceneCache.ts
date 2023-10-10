@@ -76,10 +76,7 @@ export class SceneCache {
 
   async #loadFont(): Promise<void> {
     await this.#font.load().then((f) => {
-      // @ts-expect-error This has broad adoption but isn't in typescript spec yet
-      // see: https://caniuse.com/font-loading
-      // Ignore the error for now
-      document.fonts.add(f); // eslint-disable-line @typescript-eslint/no-unsafe-call
+      document.fonts.add(f);
     });
   }
 
